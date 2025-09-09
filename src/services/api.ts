@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { User, Transport, Booking, LoginFormData, RegisterFormData, BookingFormData } from '../types';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://ticket-booking-app-backend-clm5.onrender.com';
 
 const api = axios.create({
     baseURL: API_URL,
