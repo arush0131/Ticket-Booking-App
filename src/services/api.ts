@@ -51,23 +51,23 @@ export const authService = {
 
 export const transportService = {
     getTransports: async (type?: 'train' | 'flight' | 'bus') => {
-        const response = await api.get('/transport/transports', { params: { type } });
+        const response = await api.get('/api/transport/transports', { params: { type } });
         return response.data;
     },
     getAdminTransports: async (type?: 'train' | 'flight' | 'bus') => {
-        const response = await api.get('/admin/transport', { params: { type } });
+        const response = await api.get('/api/admin/transport', { params: { type } });
         return response.data;
     },
     addTransport: async (data: Omit<Transport, 'id' | 'availableSeats'>) => {
-        const response = await api.post('/admin/transport', data);
+        const response = await api.post('/api/admin/transport', data);
         return response.data;
     },
     updateTransport: async (id: string, data: Partial<Transport>) => {
-        const response = await api.put(`/admin/transport/${id}`, data);
+        const response = await api.put(`/api/admin/transport/${id}`, data);
         return response.data;
     },
     deleteTransport: async (id: string) => {
-        const response = await api.delete(`/admin/transport/${id}`);
+        const response = await api.delete(`/api/admin/transport/${id}`);
         return response.data;
     }
 };
